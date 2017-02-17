@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Celebrity Match Maker</title>
+    <title>Triangle</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
@@ -9,47 +9,39 @@
   </head>
   <body>
     <div class="container">
-      <h1>Find your celebrity match</h1>
-      <p>Pick your favorite food:</p>
+    <h1>Make a triangle</h1>
     <form>
-          <select class="form-control" id="question1">
-            <option value="0"></option>
-            <option value="1">Pork rinds</option>
-            <option value="2">Pizza</option>
-            <option value="3">Salad</option>
-          </select>
-        <p>Pick your favorite vacation spot:</p>
-          <select class="form-control" id="question2">
-            <option value="0"></option>
-            <option value="1">New Jersey</option>
-            <option value="2">London</option>
-            <option value="3">The Bahamas</option>
-          </select>
-        <p>Pick your favorite car:</p>
-          <select class="form-control" id="question3">
-            <option value="0"></option>
-            <option value="1">Toyota Camry</option>
-            <option value="2">Chevrolet Corvette</option>
-            <option value="3">Lamboghini Marcialago</option>
-          </select>
-        <button type="submit" class="btn">Submit</button>
-      </form>
-      <div class="celebrityOutput">
-        <div class="lindseyLohan">
-          <img src="img/lindsey.jpeg" alt="picture of Lindsey Lohan">
-        </div>
-        <div class="jamesMarsden">
-          <img src="img/james.jpeg" alt="picture of James Marsden">
-        </div>
-        <div class="steveBuscemi">
-          <img src="img/steve.jpeg" alt="picture of Steve Buscemi">
-        </div>
+      <div class="form-group">
+        <label for="number1">Pick a number</label>
+        <input id="number1" class="form-control" type="text">
       </div>
-        <div class="alert alert-danger" role="alert">
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-          <span class="sr-only">Error:</span>
-          You Forgot a Question!
-        </div>
+      <div class="form-group">
+        <label for="number2">Pick another number</label>
+        <input id="number2" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="number3">Pick your final number</label>
+        <input id="number3" class="form-control" type="text">
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <div class="output">
+      <div class="equilateral">
+        <img src="img/lindsey.jpeg" alt="picture of Lindsey Lohan">
+      </div>
+      <div class="isosceles">
+        <img src="img/james.jpeg" alt="picture of James Marsden">
+      </div>
+      <div class="scalene">
+        <img src="img/steve.jpeg" alt="picture of Steve Buscemi">
+      </div>
+      <div class="notTriangle">
+        <img src="img/steve.jpeg" alt="picture of Steve Buscemi">
+      </div>
+      </div>
+    </div>
+
   </div>
   </body>
 </html>

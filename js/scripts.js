@@ -2,32 +2,26 @@
 
 $(document).ready(function(){
   $("form").submit(function() {
-    var food = parseInt($("select#question1").val());
-    var vacation = parseInt($("select#question2").val());
-    var car = parseInt($("select#question3").val());
-    var totalScore = car + vacation + food;
+    var side1 = parseInt($("#number1").val());
+    var side2 = parseInt($("#number2").val());
+    var side3 = parseInt($("#number3").val());
 
-    if (food === 0 || vacation === 0 || car === 0) {
-      $(".alert-danger").show();
+    if (side1 + side2 <= side3 || side2 + side3 <= side1 || side1 + side3 <= side2) {
+      $(".notTriangle").show();
+      $(".isosceles, .scalene, .equilateral").hide();
+      
+    } else if (side1 === side2 && side1 === side3 && side2 === side3) {
+      $(".equilateral").show();
+      $(".isosceles, .scalene, .notTriangle").hide();
 
-    } else {
-      if(totalScore <= 3){
-        $(".lindseyLohan").show();
-        $(".steveBuscemi, .jamesMarsden").hide();
+    } else if (side1 === side2 && side2 !== side3 || side3 === side2 && side2 !== side1 || side1 === side3 && side1 !== side2) {
+       $(".isosceles").show();
+       $(".equilateral, .scalene, .notTriangle").hide();
 
-
-      } else if ((totalScore > 3) && (totalScore < 7)) {
-          $(".jamesMarsden").show();
-          $(".steveBuscemi, .lindseyLohan").hide();
-
-
-      }  else {
-          $(".steveBuscemi").show();
-          $(".jamesMarsden, .lindseyLohan").hide();
-
-      }
-      }
-
+    } else if (side1 !== side2 && side1 !== side3 && side2 !== side3) {
+      $(".scalene").show();
+      $(".isosceles, .equilateral, .notTriangle").hide();
+    }
 
     event.preventDefault();
   });
